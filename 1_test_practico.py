@@ -1,9 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.chrome.options import Options
 
 # Configuración inicial
-driver = webdriver.Chrome()
+options = Options()
+options.add_argument("--headless") # Ejecución sin ventana 
+options.add_argument("--no-sandbox") 
+options.add_argument("--disable-dev-shm-usage")
+driver = webdriver.Chrome(options=options)    
 driver.implicitly_wait(10)
 
 def ejecutar_pruebas():

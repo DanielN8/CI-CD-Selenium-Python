@@ -22,11 +22,12 @@ def pytest_runtest_makereport(item, call):
 def driver():
     """Fixture del navegador con modo headless para CI/CD"""
     options = Options()
-    options.add_argument("--headless")  # Ejecución sin ventana
-    options.add_argument("--no-sandbox")
+    options = Options()
+    options.add_argument("--headless") # Ejecución sin ventana 
+    options.add_argument("--no-sandbox") 
     options.add_argument("--disable-dev-shm-usage")
-    
     driver = webdriver.Chrome(options=options)
+    
     driver.maximize_window() 
     yield driver
     driver.quit()

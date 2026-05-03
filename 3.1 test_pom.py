@@ -1,8 +1,14 @@
 from selenium import webdriver
 from login_page import LoginPage  # Importamos nuestra clase
+from selenium.webdriver.chrome.options import Options
 
 def test_ejecucion_pom():
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--headless") # Ejecución sin ventana 
+    options.add_argument("--no-sandbox") 
+    options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(options=options)    
+    
     driver.get("https://saucedemo.com")
 
     # Instanciamos la página

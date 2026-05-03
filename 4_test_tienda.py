@@ -1,11 +1,16 @@
 import pytest
 from selenium import webdriver
 from login_page import LoginPage  # Usando el modelo POM que creamos antes
+from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture
 def driver():
     """Configuración inicial del navegador (Fixture)"""
-    driver = webdriver.Chrome()
+    options = Options()
+    options.add_argument("--headless") # Ejecución sin ventana 
+    options.add_argument("--no-sandbox") 
+    options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(options=options)    
     yield driver
     driver.quit()
 
