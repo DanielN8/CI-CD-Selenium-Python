@@ -1,0 +1,36 @@
+# Maven
+target/
+.m2/
+
+# Selenium distribution (se descarga via Maven)
+selenium-java-*/
+
+# Jars locales (Maven los gestiona)
+lib/
+*.jar
+
+# Clases extraidas de jars
+com/
+org/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Drivers binarios (Selenium Manager los descarga automaticamente)
+drivers/
+*.exe
+chromedriver*
+
+# Maven zip (usar instalacion del sistema)
+apache-maven-*.zip
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.class
